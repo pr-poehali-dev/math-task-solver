@@ -1,0 +1,22 @@
+{
+  "tests": [
+    {
+      "name": "Решение квадратного уравнения",
+      "method": "POST",
+      "path": "/",
+      "body": {"task": "решить уравнение x^2 - 4 = 0"},
+      "expectedStatus": 200,
+      "expectedBody": {"answer": "string", "steps": []},
+      "bodyMatcher": "partial"
+    },
+    {
+      "name": "Пустая задача",
+      "method": "POST",
+      "path": "/",
+      "body": {"task": ""},
+      "expectedStatus": 400,
+      "expectedBody": {"error": "string"},
+      "bodyMatcher": "partial"
+    }
+  ]
+}
